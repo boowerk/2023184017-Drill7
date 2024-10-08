@@ -31,6 +31,7 @@ class Boy:
 class Ball:
     def __init__(self):
         self.x, self.y = random.randint(50, 750), 599
+        self.small_big = random.randint(0, 1)
         self.small_image = load_image('ball21x21.png')
         self.big_image = load_image('ball41x41.png')
 
@@ -38,7 +39,10 @@ class Ball:
         self.y -= 5
 
     def draw(self):
-        self.small_image.draw(self.x, self.y)
+        if self.small_big == 0:
+            self.small_image.draw(self.x, self.y)
+        else:
+            self.big_image.draw(self.x, self.y)
 
 def handle_events():
     global running
