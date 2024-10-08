@@ -31,12 +31,17 @@ class Boy:
 class Ball:
     def __init__(self):
         self.x, self.y = random.randint(50, 750), 599
+        
         self.small_big = random.randint(0, 1)
         self.small_image = load_image('ball21x21.png')
         self.big_image = load_image('ball41x41.png')
 
     def update(self):
-        self.y -= 5
+
+        if self.y <= 50:
+            pass
+        else:
+            self.y -= 5
 
     def draw(self):
         if self.small_big == 0:
