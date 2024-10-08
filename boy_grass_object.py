@@ -53,7 +53,9 @@ def reset_world():
     global running
     global grass
     global team
+    global ball
     global world
+
 
     running = True
     world = []
@@ -63,6 +65,9 @@ def reset_world():
 
     team = [Boy() for i in range(11)]
     world += team
+
+    ball = [Ball() for i in range(20)]
+    world += ball
 
 def update_world():
     for o in world: # 객체의 상태를 업데이트
